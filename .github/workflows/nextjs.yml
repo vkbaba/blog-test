@@ -49,7 +49,7 @@ jobs:
             echo "runner=npx --no-install" >> $GITHUB_OUTPUT
             exit 0
           else
-            ls
+            echo "${{ github.workspace }}/package.json"
             echo "Unable to determine package manager"
             exit 1
           fi
