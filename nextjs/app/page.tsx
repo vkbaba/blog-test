@@ -1,13 +1,10 @@
 import  ArticleList  from "@/components/ArticleList";
+import fs from 'fs';
+import path from 'path';
+import getArticlesMetadata from '@/utils/getArticlesMetadata';
 
-const articles = [
-  { id: 1, title: "Title 1" },
-  { id: 2, title: "Title 2" },
-  { id: 3, title: "Title 3" },
-];
-
-export default async function Page() {
-
+export default async function Page() { 
+  const articles = getArticlesMetadata("../content/");
   return (
     <>
       <ArticleList articles={articles} />
