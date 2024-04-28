@@ -29,19 +29,21 @@ function getAllFiles(dir: string): string[] {
 
 export function getPostsMetadata(basePath: string): PostMetadata[] {
 
-    const markdownFiles = getAllFiles(basePath).filter(file => file.endsWith('.md'));
-
+    const markdownFiles = getAllFiles(basePath).filter(file => file.endsWith('.md')); 
     const posts = markdownFiles.map((filePath) => {
         const fileContents = fs.readFileSync(filePath, 'utf8');
         const matterResult = matter(fileContents);
         const filename = path.basename(filePath);
+        // slug is the name of the directory containing the markdown file
+        const pathParts = filePath.split(path.sep);
+        const slug = pathParts[pathParts.length - 2];
         return {
             title: matterResult.data.title,
             date: matterResult.data.date,
             categories: matterResult.data.categories,
             tags: matterResult.data.tags,
             coverImage: matterResult.data.coverImage,
-            slug: filename.replace('.md', ''),
+            slug: slug,
         };
     });
 
@@ -49,16 +51,19 @@ export function getPostsMetadata(basePath: string): PostMetadata[] {
 }
 
 export function getPostContent(basePath: string, slug: string): matter.GrayMatterFile<string> {
-    const markdownFiles = getAllFiles(basePath).filter(file => file.endsWith('.md'));
-    const file = markdownFiles.find(file => file.endsWith(slug + '.md'));
 
+    const markdownFiles = getAllFiles(basePath).filter(file => file.endsWith('.md'));
+    const file = markdownFiles.filter(file => file.includes(slug));
     if (!file) {        
         throw new Error(`File not found: ${slug}`);
+    } else if (file.length > 1) {
+        throw new Error(`Multiple files found: ${slug}`);
     }
 
-    const content = fs.readFileSync(file, 'utf8');
+    const content = fs.readFileSync(file[0], 'utf8');
 
     const matterResult = matter(content)
     return matterResult
 }
+
 

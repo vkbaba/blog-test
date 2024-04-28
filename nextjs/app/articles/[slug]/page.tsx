@@ -22,7 +22,6 @@ export const generateStaticParams = async () => {
 
 export default function Page({params} : {params: {slug: string}}) {
     const post = getPostContent('../content/', params.slug)
-    console.log(post)
     return (
         <main>
             <article>
