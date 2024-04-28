@@ -1,10 +1,10 @@
 import  ArticleList  from "@/components/ArticleList";
 import fs from 'fs';
 import path from 'path';
-import getArticlesMetadata from '@/utils/getArticlesMetadata';
+import {getPostsMetadata, getPostContent} from '@/utils/getPosts';
 
 export default async function Page() { 
-  const articles = getArticlesMetadata("../content/");
+  const articles = getPostsMetadata("../content/");
   return (
     <>
       <ArticleList articles={articles} />
