@@ -5,9 +5,9 @@ import matter from "gray-matter"
 import Markdown from "markdown-to-jsx"
 import { compiler } from 'markdown-to-jsx'
 import React from 'react'
-import Image from 'next/image'
-
+import ExportedImage from "next-image-export-optimizer";
 // Set dynamic routes
+
 export const generateStaticParams = async () => {
     const posts = getPostsMetadata('./posts/')
     return posts.map((post: { slug: string }) => ({ slug: post.slug }))
@@ -75,12 +75,12 @@ export default function Page({params} : {params: {slug: string}}) {
                                 },
                             },
                             img: {
-                                component: Image,
+                                component: ExportedImage,
                                 props: {
-                                    className: 'rounded-lg',
-                                    width: 800,
-                                    height: 400,
+                                    width: 500,
+                                    height: 500,
                                 },
+
                             },
                                 
                         }
