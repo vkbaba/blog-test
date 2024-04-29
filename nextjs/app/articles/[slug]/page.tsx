@@ -35,7 +35,8 @@ export default function Page({ params }: { params: { slug: string } }) {
         } :
         // prod
         {
-            className: 'm-6 rounded-md	border border-gray-500 mx-auto'
+            className: 'm-6 rounded-md	border border-gray-500 mx-auto',
+            basePath : '/blog-test'
         };
         
     return (
