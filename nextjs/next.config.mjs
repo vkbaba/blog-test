@@ -8,8 +8,8 @@ const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
     output: 'export',
-    basePath: isProd ? `/blog-test` : '',
-    assetPrefix: isProd ? `/blog-test/` : '',
+    // basePath: isProd ? `/blog-test` : '',
+    // assetPrefix: isProd ? `/blog-test/` : '',
     images: {
         loader: "custom",
         imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
