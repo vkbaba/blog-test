@@ -77,8 +77,9 @@ export default function Page({params} : {params: {slug: string}}) {
                             img: {
                                 component: ExportedImage,
                                 props: {
-                                    width: 500,
-                                    height: 500,
+
+                                    className: 'm-4 border border-gray-500',
+                                    
                                 },
 
                             },
