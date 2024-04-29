@@ -67,3 +67,25 @@ export function getPostContent(basePath: string, slug: string): matter.GrayMatte
 }
 
 
+// export function getPostContent(basePath: string, slug: string): matter.GrayMatterFile<string> {
+//     const markdownFiles = getAllFiles(basePath).filter(file => file.endsWith('.md'));
+//     const file = markdownFiles.find(file => file.includes(path.join(slug, 'index.md'))); // Ensuring to pick the correct index.md file
+//     if (!file) {
+//         throw new Error(`File not found: ${slug}`);
+//     }
+
+//     const content = fs.readFileSync(file, 'utf8');
+//     const matterResult = matter(content);
+    
+//     // Adjust image paths in Markdown content
+//     const updatedContent = matterResult.content.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, src) => {
+//         if (!src.startsWith('http')) { // Check if the src is a relative path
+//             const newPath = path.join('/content', slug, src); // Adjust the path as needed
+//             return `![${alt}](${newPath})`;
+//         }
+//         return match; // Return the original match if it's not a relative path
+//     });
+
+//     return {...matterResult, content: updatedContent};
+// }
+

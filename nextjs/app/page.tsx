@@ -4,10 +4,10 @@ import path from 'path';
 import {getPostsMetadata, getPostContent} from '@/utils/getPosts';
 
 export default async function Page() { 
-  const articles = getPostsMetadata("../content/");
+  const posts = getPostsMetadata("./posts");
   return (
     <>
-      <ArticleList articles={articles} />
+      <ArticleList articles={posts} />
     </>
   );
 }
