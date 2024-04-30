@@ -9,7 +9,7 @@ const Header = () => {
           <h1 className="mr-4 text-2xl">virtual pantry</h1>
         </Link>
         <Link href="/">
-          <ExportedImage src={logo} alt="Logo" width={80} height={80} />
+          <ExportedImage src={logo} alt="Logo" width={80} height={80} unoptimized={true}/>
         </Link>
       </header>
     );
