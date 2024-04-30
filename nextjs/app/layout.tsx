@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import localFont from 'next/font/local'
+import Header  from "@/components/Header";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,7 +35,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={myFont.className}>
-      <body className="m-8">{children}</body>
+      <body className="m-8 ">
+        <Header />  
+        <div className="mx-auto max-w-4xl mt-16">     
+          {children}
+        </div>
+      </body>
     </html>
   )
 }

@@ -7,6 +7,9 @@
   html {
     color: #09090b;
   }
+  body {
+    background-color: #f9f9ff;
+  }
 }
 
 @layer utilities {
@@ -21,7 +24,8 @@
   .line {
     &::before {
       counter-increment: step;
-      @apply mr-6 inline-block w-4 border-transparent text-right text-neutral-500 content-[counter(step)];
+      /* line numbers */
+      @apply mr-6 inline-block w-4 border-transparent text-right text-neutral-500 content-[counter(step)]; 
     }
   }
 }

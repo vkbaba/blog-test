@@ -4,11 +4,22 @@ date: "2024-4-28"
 categories: 
   - "others"
 tags: 
+  - "vsphere" 
   - "vsphere"
-coverImage: "image.jpg"
+  - "vsphere"
+  - "vsphere"
+  - "vsphere"
+  - "vspheressss"
+  - "vspheressss"
+  - "vspheressss"
+  - "vspheressss"
+  - "vspheressss"
+
+coverImage: "image.png"
 ---
 
 # 見出し1
+aaaaaa
 
 ## 見出し2
 - test1
@@ -54,6 +65,7 @@ dict_list[0:2]
 ```python
 atlas.map_data(embeddings=embeddings, identifier="my-dataset", data=dict_list, topic_model=dict(topic_label_field='text'))
 ```
+
 
 ここまでのコードをまとめます。流れは簡単だと思いますが、いかんせんドキュメントがまだまだ充実していないため、実装を追うのが結構大変です。
 

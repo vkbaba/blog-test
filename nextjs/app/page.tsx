@@ -1,4 +1,4 @@
-import  ArticleList  from "@/components/ArticleList";
+import  PostList  from "@/components/PostList";
 import fs from 'fs';
 import path from 'path';
 import {getPostsMetadata, getPostContent} from '@/utils/getPosts';
@@ -6,8 +6,6 @@ import {getPostsMetadata, getPostContent} from '@/utils/getPosts';
 export default async function Page() { 
   const posts = getPostsMetadata("./posts");
   return (
-    <>
-      <ArticleList articles={posts} />
-    </>
+      <PostList posts={posts} />
   );
 }
