@@ -1,11 +1,12 @@
-import  PostList  from "@/components/PostList";
-import fs from 'fs';
-import path from 'path';
-import {getPostsMetadata, getPostContent} from '@/utils/getPosts';
+import PostList from "@/components/PostList";
+import { getPostsMetadata } from '@/utils/getPosts';
+import TagFilter from '@/components/TagFilter';
 
-export default async function Page() { 
-  const posts = getPostsMetadata("./posts");
+export default async function Page() {
+  const postsMetadata = getPostsMetadata("./posts");
   return (
-      <PostList posts={posts} />
+    <>
+      <PostList postsMetadata={postsMetadata} />
+    </>
   );
 }

@@ -22,7 +22,7 @@ export default async function Code({ children, className, theme = "slack-dark" }
     });
 
     return (
-          <div className="overflow-hidden rounded-md	">
+          <div className="overflow-hidden rounded-md my-8">
             <div
               className=" [&>pre]:overflow-x-auto  [&>pre]:py-3 [&>pre]:pl-4 [&>pre]:pr-5 [&>pre]:leading-snug"
               dangerouslySetInnerHTML={{ __html: html }}

@@ -18,7 +18,7 @@ const config: Config = {
         "blog-text-white" : "#f9f9ff",
         "blog-bg": "#f9f9ff",
         "blog-border": "#e5e7eb",
-        "blog-accent-primary": "#3730a3",
+        "blog-accent-primary": "#1e3a8a",
         "blog-accent-secondary": "#e0e7ff", // tag
       },
     },

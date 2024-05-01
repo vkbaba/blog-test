@@ -11,10 +11,6 @@ export const generateStaticParams = async () => {
 }
 
 // export async function generateMetadata({ params, searchParams }) {
-//     const id = params?.slug ? ' ⋅ ' + params?.slug : ''
-//     return {
-//         title: `The Bubbly Baker ${id.replaceAll('_', ' ')}`
-//     }
 // }
 
 export default function Page({ params }: { params: { slug: string } }) {
@@ -29,13 +25,13 @@ export default function Page({ params }: { params: { slug: string } }) {
     const imgProps = process.env.NODE_ENV === 'development' ?
         // dev 
         {
-            className: 'm-6 rounded-md	border border-blog-border mx-auto',
+            className: 'my-8 rounded-md	border border-blog-border mx-auto',
             width: 500,
             height: 500
         } :
         // prod
         {
-            className: 'm-6 rounded-md	border border-blog-border mx-auto',
+            className: 'my-8 rounded-md	border border-blog-border mx-auto',
             basePath: '/blog-test'
         };
 
@@ -43,11 +39,11 @@ export default function Page({ params }: { params: { slug: string } }) {
         <div className="max-w-4xl mx-auto">
             <main>
                 <article>
-                    <h1 className="text-5xl my-4">{post.data.title}</h1>
+                    <h1 className="text-4xl my-4">{post.data.title}</h1>
                     <div className="text-lg"> {post.data.date} </div>
-                    <div className="my-4 flex flex-wrap">
+                    <div className="my-4 flex flex-wrap gap-x-2">
                         {post.data.tags.map((tag: string) => (
-                            <span key={tag} className="mr-2 mt-1 px-3 py-1 bg-blog-accent-secondary rounded-md text-sm">{tag}</span>
+                            <span key={tag} className="mt-1 px-3 py-1 bg-blog-accent-secondary rounded-md text-sm">{tag}</span>
                         ))}
                     </div>
                     <div className="border-b-2 my-6"> </div>
@@ -61,7 +57,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                                 },
                                 h2: {
                                     props: {
-                                        className: 'text-3xl font-bold my-8',
+                                        className: 'text-3xl font-bold my-8 border-b-2 border-blog-border  pb-2',
                                     },
                                 },
                                 h3: {
@@ -93,7 +89,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                                     props: {
                                         target: '_blank',
                                         rel: 'noopener noreferrer',
-                                        className: 'text-blue-400 underline visited:text-indigo-800',
+                                        className: 'text-cyan-600 underline visited:text-indigo-800',
                                     },
                                 },
                                 img: {

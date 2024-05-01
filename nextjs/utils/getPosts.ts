@@ -41,7 +41,7 @@ export function getPostsMetadata(basePath: string): PostMetadata[] {
             title: matterResult.data.title,
             date: matterResult.data.date,
             categories: matterResult.data.categories,
-            tags: matterResult.data.tags,
+            tags: matterResult.data.tags.map((tag: string) => `${tag}`),
             coverImage: matterResult.data.coverImage,
             slug: slug,
         };

@@ -15,20 +15,20 @@ type Props = {
 };
 
 const Post = ({ post }: { post: PostMetadata }) => {
-    post.coverImage = `/${post.slug}/images/${post.coverImage}`;
+    const postCoverImage = `/${post.slug}/images/${post.coverImage}`;
 
     const imgProps = process.env.NODE_ENV === 'development' ?
     {
-        src: post.coverImage,
+        src: postCoverImage,
         alt: "Cover",
         width: 500,
         height: 500,
-        className: "object-cover w-full border border-blog-border h-full rounded-md"
+        className: "object-cover w-full border border-blog-border h-full rounded-md "
     } :
     {
-        src: post.coverImage,
+        src: postCoverImage,
         alt: "Cover",
-        className: "object-cover w-full border border-blog-border h-full rounded-md",
+        className: "object-cover w-full border border-blog-border h-full rounded-md ",
         basePath: '/blog-test'
     };
 
@@ -39,15 +39,15 @@ const Post = ({ post }: { post: PostMetadata }) => {
                     <ExportedImage {...imgProps} />
                 </Link>
             </div>
-            <div className="flex-grow p-4 flex flex-col justify-between"> {/* ここに flex-col と justify-between を追加 */}
+            <div className="flex-grow p-4 flex flex-col justify-between">
                 <Link href={`/posts/${post.slug}`}>
                     <h2 className="text-2xl my-2">{post.title}</h2>
                 </Link>
                 <div>
                     <p className="mb-2">{post.date}</p>
-                    <div className="flex flex-wrap">
+                    <div className="flex flex-wrap gap-x-2">
                         {post.tags.map((tag, index) => (
-                            <span key={index} className="mr-2 mt-1 px-3 py-1 bg-blog-accent-secondary rounded-md text-sm">
+                            <span key={index} className="mt-1 px-3 py-1 bg-blog-accent-secondary rounded-md text-sm">
                                 {tag}
                             </span>
                         ))}
